@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/weatherImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@id/weatherImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- Latitude -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+            <TextView
+                android:text="@string/latitude"
+                android:padding="8dp"/>
+
+            <EditText
+                android:id="@+id/latInput"
+                android:backgroundTint="#FFFFFF"
+                android:inputType="numberDecimal|numberSigned"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:text="@string/latitude_value"
+                android:layout_height="48dp"/>
+        </TableRow>
+
+        <!-- Longitude -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+            <TextView
+                android:text="@string/longitude"
+                android:padding="8dp"/>
+
+            <EditText
+                android:id="@+id/lonInput"
+                android:layout_width="113dp"
+                android:backgroundTint="#FFFFFF"
+                android:inputType="numberDecimal|numberSigned"
+                android:padding="8dp"
+                android:textColor="#FFFFFF"
+                android:text="@string/longitude_value"
+                android:layout_height="48dp"/>
+        </TableRow>
+
+        <!-- Sea Level Pressure -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+            <TextView
+                android:text="@string/sea_level_pressure"
+                android:padding="8dp"/>
+            <TextView
+                android:id="@+id/pressureValue"
+                android:padding="8dp"/>
+        </TableRow>
+
+        <!-- Wind Direction -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+
+            <TextView
+                android:layout_width="156dp"
+                android:padding="8dp"
+                android:text="@string/wind_direction" />
+            <TextView
+                android:id="@+id/windDirectionValue"
+                android:padding="8dp"/>
+        </TableRow>
+
+        <!-- Wind Speed -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+            <TextView
+                android:text="@string/wind_speed"
+                android:padding="8dp"/>
+            <TextView
+                android:id="@+id/windSpeedValue"
+                android:padding="8dp"/>
+        </TableRow>
+
+        <!-- Temperature -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+            <TextView
+                android:text="@string/temperature"
+                android:padding="8dp"/>
+            <TextView
+                android:id="@+id/temperatureValue"
+                android:padding="8dp"/>
+        </TableRow>
+
+        <!-- Time -->
+        <TableRow android:background="@color/viewBG" android:padding="4dp">
+            <TextView
+                android:text="@string/time"
+                android:padding="8dp"/>
+            <TextView
+                android:id="@+id/timeValue"
+                android:padding="8dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
